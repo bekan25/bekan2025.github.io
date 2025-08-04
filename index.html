@@ -1,104 +1,296 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Dereje Solomon | Portfolio</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #f2f5f9;
-      color: #333;
-      margin: 0;
-      padding: 0;
-    }
-    header {
-      background-color: #0d47a1;
-      color: white;
-      padding: 30px 20px;
-      text-align: center;
-    }
-    nav {
-      background: #1565c0;
-      color: white;
-      padding: 10px;
-      text-align: center;
-    }
-    nav a {
-      color: white;
-      margin: 0 15px;
-      text-decoration: none;
-    }
-    section {
-      padding: 40px 20px;
-      max-width: 900px;
-      margin: auto;
-    }
-    .project {
-      background: white;
-      padding: 20px;
-      margin-bottom: 20px;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    }
-    footer {
-      background: #0d47a1;
-      color: white;
-      text-align: center;
-      padding: 15px;
-    }
-    a {
-      color: #0d47a1;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dereje Solomon | CS Student & Developer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #2d2d2d;
+            --secondary: #0066cc;
+            --light: #f8f9fa;
+            --dark: #343a40;
+            --accent: #ff6b6b;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--primary);
+            margin: 0;
+            padding: 0;
+            background-color: var(--light);
+        }
+        header {
+            background: linear-gradient(135deg, var(--dark), #2c3e50);
+            color: white;
+            padding: 3rem 0;
+            text-align: center;
+        }
+        .profile-img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid var(--secondary);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            margin-bottom: 1.5rem;
+        }
+        .container {
+            width: 85%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 0;
+        }
+        .section-title {
+            color: var(--secondary);
+            border-bottom: 3px solid var(--secondary);
+            padding-bottom: 0.5rem;
+            margin-top: 3rem;
+            font-size: 2rem;
+        }
+        .card {
+            background: white;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+        .skill-category {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+        footer {
+            background: linear-gradient(135deg, var(--dark), #2c3e50);
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
+        .contact-methods {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            background: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 50px;
+            color: var(--dark);
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+        .contact-item i {
+            color: var(--secondary);
+            font-size: 1.2rem;
+        }
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 1.5rem;
+            background: var(--secondary);
+            color: white;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            margin: 0.5rem;
+        }
+        .btn:hover {
+            background: var(--accent);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        .project-links {
+            margin-top: 1.5rem;
+        }
+        .project-links a {
+            display: inline-block;
+            padding: 0.6rem 1.2rem;
+            background: var(--secondary);
+            color: white;
+            border-radius: 5px;
+            margin-right: 0.8rem;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+        .project-links a:hover {
+            background: var(--accent);
+            transform: translateY(-2px);
+        }
+        @media (max-width: 768px) {
+            .container {
+                width: 90%;
+            }
+            header {
+                padding: 2rem 0;
+            }
+            .profile-img {
+                width: 150px;
+                height: 150px;
+            }
+        }
+    </style>
 </head>
 <body>
+    <header>
+        <img src="images/profile.jpg" alt="Dereje Solomon" class="profile-img">
+        <h1>Dereje Solomon</h1>
+        <p>Computer Science Student | Full-Stack Developer | AI Enthusiast</p>
+        
+        <div class="contact-methods">
+            <a href="mailto:derejesolomon363@gmail.com" class="contact-item">
+                <i class="fas fa-envelope"></i>
+                <span>derejesolomon363@gmail.com</span>
+            </a>
+            <a href="tel:+251922481727" class="contact-item">
+                <i class="fas fa-phone"></i>
+                <span>+251 92 248 1727</span>
+            </a>
+            <a href="https://t.me/bekan2025" class="contact-item" target="_blank">
+                <i class="fab fa-telegram"></i>
+                <span>@bekan2025</span>
+            </a>
+        </div>
+    </header>
 
-  <header>
-    <h1>Dereje Solomon</h1>
-    <p>4th Year Computer Science Student – Unity University</p>
-  </header>
+    <div class="container">
+        <section id="about">
+            <h2 class="section-title">About Me</h2>
+            <div class="card">
+                <p>I am a passionate Computer Science student at Unity University with expertise in full-stack development and AI solutions. My work focuses on creating impactful technologies for education and resource management in Ethiopia.</p>
+                <p>With skills in multiple programming languages and frameworks, I develop practical solutions like educational bots and resource monitoring systems that address local challenges.</p>
+            </div>
+        </section>
 
-  <nav>
-    <a href="#about">About</a>
-    <a href="#projects">Projects</a>
-    <a href="#contact">Contact</a>
-  </nav>
+        <section id="skills">
+            <h2 class="section-title">Technical Skills</h2>
+            <div class="skills-container">
+                <div class="card skill-category">
+                    <h3><i class="fas fa-code"></i> Programming</h3>
+                    <ul>
+                        <li>Java</li>
+                        <li>Python</li>
+                        <li>JavaScript</li>
+                        <li>C++</li>
+                    </ul>
+                </div>
+                <div class="card skill-category">
+                    <h3><i class="fas fa-laptop-code"></i> Web Development</h3>
+                    <ul>
+                        <li>React.js</li>
+                        <li>Node.js</li>
+                        <li>HTML5/CSS3</li>
+                        <li>Flutter</li>
+                    </ul>
+                </div>
+                <div class="card skill-category">
+                    <h3><i class="fas fa-database"></i> Databases & Tools</h3>
+                    <ul>
+                        <li>MySQL</li>
+                        <li>Firebase</li>
+                        <li>Git/GitHub</li>
+                        <li>Figma</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
 
-  <section id="about">
-    <h2>About Me</h2>
-    <p>My name is <strong>Dereje Solomon</strong>, a 4th-year Computer Science student at Unity University (Gerji Alamoudi Campus), Ethiopia. I'm passionate about technology, programming, and building innovative solutions to help my community — especially in education and public service sectors.</p>
-    <p><strong>Nationality:</strong> Ethiopian</p>
-    <p><strong>Languages:</strong> Afaan Oromoo, Amharic, English</p>
-  </section>
+        <section id="projects">
+            <h2 class="section-title">Featured Projects</h2>
+            <div class="card">
+                <h3>Bekan Learning Bot</h3>
+                <p>An educational Telegram bot delivering Ethiopian curriculum content in six languages with interactive features and progress tracking.</p>
+                <p><strong>Technologies:</strong> Python, Telegram API, Google Drive API, JSON</p>
+                <div class="project-links">
+                    <a href="https://github.com/bekan2025/bekan-learning-bot" target="_blank">
+                        <i class="fab fa-github"></i> GitHub
+                    </a>
+                    <a href="https://t.me/BekanLearningBot" target="_blank">
+                        <i class="fas fa-external-link-alt"></i> Live Demo
+                    </a>
+                </div>
+            </div>
+            
+            <div class="card">
+                <h3>Smart Water Management System</h3>
+                <p>Digital platform for monitoring groundwater usage with QR validation and real-time analytics to prevent resource misuse.</p>
+                <p><strong>Technologies:</strong> Flutter, Firebase, Google Maps API</p>
+                <div class="project-links">
+                    <a href="https://github.com/bekan2025/smart-water-system" target="_blank">
+                        <i class="fab fa-github"></i> GitHub
+                    </a>
+                </div>
+            </div>
+        </section>
 
-  <section id="projects">
-    <h2>Projects</h2>
-
-    <div class="project">
-      <h3>Smart Water Usage App</h3>
-      <p>A Flutter app that helps Ethiopian households track daily water usage and avoid overuse. It includes user login, consumption graphs, and alerts.</p>
-      <p><strong>Tools:</strong> Flutter, Dart, Firebase</p>
+        <section id="contact">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="card" style="text-align: center;">
+                <p>I'm available for collaborations, internships, or freelance opportunities. Reach out through any of these channels:</p>
+                
+                <div style="margin: 2rem 0;">
+                    <a href="mailto:derejesolomon363@gmail.com" class="btn">
+                        <i class="fas fa-envelope"></i> Email Me
+                    </a>
+                    <a href="https://wa.me/251922481727" class="btn" target="_blank">
+                        <i class="fab fa-whatsapp"></i> WhatsApp
+                    </a>
+                    <a href="https://t.me/bekan2025" class="btn" target="_blank">
+                        <i class="fab fa-telegram-plane"></i> Telegram
+                    </a>
+                </div>
+                
+                <div class="contact-methods">
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>derejesolomon363@gmail.com</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span>+251 92 248 1727</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fab fa-telegram"></i>
+                        <span>@bekan2025</span>
+                    </div>
+                </div>
+            </div>
+        </section>
     </div>
 
-    <div class="project">
-      <h3>Digital Bridge – Leenjii IT Bu’uuraa</h3>
-      <p>An educational initiative to teach IT fundamentals to students in rural areas of Ethiopia through multilingual materials (Afaan Oromoo, Amharic, English).</p>
-      <p><strong>Tools:</strong> HTML, CSS, Telegram Bot API</p>
-    </div>
-
-  </section>
-
-  <section id="contact">
-    <h2>Contact</h2>
-    <p><strong>📞 Phone:</strong> 0922481727</p>
-    <p><strong>📧 Email:</strong> <a href="mailto:derjesolomon363@gmail.com">derjesolomon363@gmail.com</a></p>
-    <p><strong>🌐 GitHub:</strong> <a href="https://github.com/bekan2025" target="_blank">github.com/bekan2025</a></p>
-  </section>
-
-  <footer>
-    <p>&copy; 2025 Dereje Solomon. All Rights Reserved.</p>
-  </footer>
-
+    <footer>
+        <div style="margin-bottom: 1.5rem;">
+            <a href="https://github.com/bekan2025" target="_blank" style="color: white; margin: 0 10px; font-size: 1.5rem;">
+                <i class="fab fa-github"></i>
+            </a>
+            <a href="https://t.me/bekan2025" target="_blank" style="color: white; margin: 0 10px; font-size: 1.5rem;">
+                <i class="fab fa-telegram"></i>
+            </a>
+            <a href="https://wa.me/251922481727" target="_blank" style="color: white; margin: 0 10px; font-size: 1.5rem;">
+                <i class="fab fa-whatsapp"></i>
+            </a>
+        </div>
+        <p>&copy; 2024 Dereje Solomon. All rights reserved.</p>
+        <p style="margin-top: 0.5rem;">
+            <a href="mailto:derejesolomon363@gmail.com" style="color: white;">derejesolomon363@gmail.com</a> | 
+            <a href="tel:+251922481727" style="color: white;">+251 92 248 1727</a> | 
+            Addis Ababa, Ethiopia
+        </p>
+    </footer>
 </body>
 </html>
